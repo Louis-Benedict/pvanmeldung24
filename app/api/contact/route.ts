@@ -1,7 +1,5 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const serviceLabels: Record<string, string> = {
   pv: "PV-Netzanmeldung (Solar)",
   wp: "Wärmepumpen-Anmeldung",
@@ -14,6 +12,7 @@ const serviceLabels: Record<string, string> = {
 
 export async function POST(req: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { firstName, lastName, email, phone, serviceType, message } =
       await req.json();
 
