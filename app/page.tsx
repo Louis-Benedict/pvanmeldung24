@@ -421,7 +421,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 text-neutral-900">
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-neutral-200/60 shadow-sm shadow-neutral-200/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-1.5">
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center shadow-md shadow-[#2BB33A]/30">
               <IconBolt className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
@@ -458,7 +458,7 @@ export default function Home() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neutral-700/20 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 pt-24 pb-32">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div>
                 <Badge className="mb-6 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
@@ -498,7 +498,7 @@ export default function Home() {
           </div>
 
           {/* Glass card floating at hero bottom */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 pb-8">
             <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl px-6 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
               {[
                 { value: "Bis zu 3 Std.", label: "Zeitersparnis pro Projekt" },
@@ -526,7 +526,7 @@ export default function Home() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#2BB33A]/6 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30 backdrop-blur-sm">
                 Unsere Leistungen
@@ -600,7 +600,7 @@ export default function Home() {
             <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#2BB33A]/7 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
                 So geht&#39;s
@@ -644,7 +644,7 @@ export default function Home() {
             <div className="absolute bottom-10 left-16 w-80 h-80 bg-neutral-300/30 rounded-full blur-3xl" />
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
             <div className="text-center mb-16">
               <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30 backdrop-blur-sm">
                 Ihre Vorteile
@@ -682,7 +682,7 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
           </div>
 
-          <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
             <Badge className="mb-6 bg-white/15 text-white border-white/25 backdrop-blur-sm">
               Jetzt starten
             </Badge>
@@ -705,7 +705,7 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="bg-neutral-950 text-neutral-400 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
