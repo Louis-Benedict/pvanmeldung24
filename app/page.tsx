@@ -190,14 +190,17 @@ function EnergyFlowDiagram() {
             <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="0.72s" />
           </circle>
 
-          {/* ── Node 2 – Wechselrichter ── */}
+          {/* ── Node 2 – Wärmepumpe ── */}
           <g className="ef-n2">
             <rect x="4" y="96" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
             <circle cx="34" cy="125" r="17" fill="#2BB33A" fillOpacity="0.18" />
-            {/* bolt */}
-            <path d="M37 113 L28 126.5 L33.5 126.5 L31 137 L41 123.5 L35.5 123.5 Z" stroke="#2BB33A" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
-            <text x="62" y="119" fill="white" fontSize="10.5" fontWeight="600">Wechselrichter</text>
-            <text x="62" y="135" fill="white" fillOpacity="0.4" fontSize="9">Energieumwandlung</text>
+            {/* thermometer */}
+            <rect x="31.5" y="113" width="5" height="13" rx="2.5" fill="none" stroke="#2BB33A" strokeWidth="1.5" />
+            <rect x="32.5" y="120" width="3" height="6" rx="1.5" fill="#2BB33A" fillOpacity="0.6" />
+            <circle cx="34" cy="130" r="5" fill="#2BB33A" fillOpacity="0.3" stroke="#2BB33A" strokeWidth="1.5" />
+            <circle cx="34" cy="130" r="2" fill="#2BB33A" />
+            <text x="62" y="119" fill="white" fontSize="10.5" fontWeight="600">Wärmepumpe</text>
+            <text x="62" y="135" fill="white" fillOpacity="0.4" fontSize="9">Heizung &amp; Warmwasser</text>
             <circle cx="208" cy="125" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r2" />
             <circle cx="208" cy="125" r="3" fill="#2BB33A" />
           </g>
@@ -209,16 +212,16 @@ function EnergyFlowDiagram() {
             <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="1.42s" />
           </circle>
 
-          {/* ── Node 3 – Zähler ── */}
+          {/* ── Node 3 – Wallbox ── */}
           <g className="ef-n3">
             <rect x="4" y="184" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
             <circle cx="34" cy="213" r="17" fill="#2BB33A" fillOpacity="0.18" />
-            {/* gauge */}
-            <path d="M21 218 a13 13 0 0 1 26 0" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
-            <circle cx="34" cy="218" r="2.5" fill="#2BB33A" />
-            <line x1="34" y1="215.5" x2="27" y2="208" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
-            <text x="62" y="207" fill="white" fontSize="10.5" fontWeight="600">Zähler</text>
-            <text x="62" y="223" fill="white" fillOpacity="0.4" fontSize="9">Digitaler Stromzähler</text>
+            {/* EV charging station */}
+            <rect x="26" y="201" width="16" height="21" rx="2" fill="none" stroke="#2BB33A" strokeWidth="1.5" />
+            <path d="M35 205 L31 212 L33.5 212 L33 218 L37.5 210 L35 210 Z" stroke="#2BB33A" strokeWidth="1.2" strokeLinejoin="round" strokeLinecap="round" fill="none" />
+            <line x1="26" y1="222" x2="42" y2="222" stroke="#2BB33A" strokeWidth="1.5" strokeLinecap="round" />
+            <text x="62" y="207" fill="white" fontSize="10.5" fontWeight="600">Wallbox</text>
+            <text x="62" y="223" fill="white" fillOpacity="0.4" fontSize="9">E-Mobilität &amp; Laden</text>
             <circle cx="208" cy="213" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r3" />
             <circle cx="208" cy="213" r="3" fill="#2BB33A" />
           </g>
@@ -230,28 +233,27 @@ function EnergyFlowDiagram() {
             <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="2.12s" />
           </circle>
 
-          {/* ── Node 4 – Netzbetreiber ── */}
+          {/* ── Node 4 – Zählerwechsel ── */}
           <g className="ef-n4">
             <rect x="4" y="272" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
             <circle cx="34" cy="301" r="17" fill="#2BB33A" fillOpacity="0.18" />
-            {/* power tower */}
-            <line x1="34" y1="290" x2="34" y2="313" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
-            <line x1="24" y1="294" x2="44" y2="294" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
-            <line x1="26" y1="301" x2="42" y2="301" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
-            <line x1="24" y1="294" x2="28" y2="313" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
-            <line x1="44" y1="294" x2="40" y2="313" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
-            <line x1="20" y1="313" x2="48" y2="313" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
-            <text x="62" y="295" fill="white" fontSize="10.5" fontWeight="600">Netzbetreiber</text>
-            <text x="62" y="311" fill="white" fillOpacity="0.4" fontSize="9">Öffentliches Stromnetz</text>
+            {/* meter with swap arrows */}
+            <path d="M22 306 a12 12 0 0 1 24 0" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <circle cx="34" cy="306" r="2.5" fill="#2BB33A" />
+            <line x1="34" y1="303.5" x2="28" y2="297" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <path d="M23 294 L26 290 L26 292.5" stroke="#2BB33A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <path d="M45 294 L42 290 L42 292.5" stroke="#2BB33A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+            <text x="62" y="295" fill="white" fontSize="10.5" fontWeight="600">Zählerwechsel</text>
+            <text x="62" y="311" fill="white" fillOpacity="0.4" fontSize="9">Zählerinstallation</text>
             <circle cx="208" cy="301" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r4" />
             <circle cx="208" cy="301" r="3" fill="#2BB33A" />
           </g>
 
           {/* ── Status badge ── */}
           <g className="ef-badge">
-            <rect x="46" y="346" width="128" height="24" rx="12" fill="#2BB33A" fillOpacity="0.18" stroke="#2BB33A" strokeOpacity="0.45" strokeWidth="1" />
-            <polyline points="68,358 75,365 88,350" stroke="#2BB33A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <text x="96" y="362" fill="#2BB33A" fontSize="10" fontWeight="600">Angemeldet</text>
+            <rect x="14" y="346" width="192" height="24" rx="12" fill="#2BB33A" fillOpacity="0.18" stroke="#2BB33A" strokeOpacity="0.45" strokeWidth="1" />
+            <polyline points="36,358 43,365 56,350" stroke="#2BB33A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <text x="64" y="362" fill="#2BB33A" fontSize="10" fontWeight="600">Wir melden alles an</text>
           </g>
         </svg>
       </div>
@@ -341,7 +343,7 @@ const features = [
     badge: "Sonstiges",
     serviceKey: "sonstige",
     title: "Sonstige Anlagen",
-    price: "Auf Anfrage",
+    price: "Preis auf Anfrage",
     hideUnit: true,
     description:
       "Netzanmeldung für weitere Anlagentypen – sprechen Sie uns einfach an.",
