@@ -432,7 +432,7 @@ export default function Home() {
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white text-sm font-semibold px-4 py-2 shadow-md shadow-[#2BB33A]/30 transition-all hover:shadow-lg hover:shadow-[#2BB33A]/40"
+              className="inline-flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-sm font-semibold px-4 py-2 shadow-md shadow-neutral-900/20 transition-all hover:shadow-lg hover:shadow-neutral-900/30"
             >
               Kontakt aufnehmen
             </a>
@@ -469,7 +469,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold px-8 py-3 text-base shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:shadow-black/40"
+                    className="inline-flex items-center justify-center rounded-xl bg-white hover:bg-neutral-50 text-neutral-900 font-semibold px-8 py-3 text-base shadow-lg shadow-black/20 transition-all hover:shadow-xl hover:shadow-black/30"
                   >
                     Kontakt aufnehmen
                   </a>
@@ -571,7 +571,7 @@ export default function Home() {
                     </p>
                     <a
                       href={`/contact?service=${feature.serviceKey}`}
-                      className="flex items-center justify-center w-full rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold py-3 text-sm shadow-md shadow-[#2BB33A]/20 transition-all hover:shadow-lg hover:shadow-[#2BB33A]/30"
+                      className="flex items-center justify-center w-full rounded-xl bg-neutral-950 hover:bg-neutral-800 text-white font-semibold py-3 text-sm shadow-md shadow-black/20 transition-all hover:shadow-lg hover:shadow-black/30"
                     >
                       Kontakt aufnehmen
                     </a>
