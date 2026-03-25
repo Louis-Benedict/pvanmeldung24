@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import "@fontsource-variable/inter";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "awatt – Netzanmeldung leicht gemacht",
+  title: "PV Anmeldung 24 – Netzanmeldung leicht gemacht",
   description:
-    "Wir übernehmen die komplette Netzanmeldung für Sie – von der Vorprüfung bis zur finalen Anmeldung beim Netzbetreiber.",
+    "Ihr professioneller Partner für alle Arten der Netzanmeldung – PV, Wärmepumpe & Wallbox. Persönlich, zuverlässig, ohne Aufwand für Sie.",
 };
 
 export default function RootLayout({
@@ -25,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

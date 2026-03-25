@@ -1,18 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 function IconBolt({ className }: { className?: string }) {
   return (
@@ -31,241 +20,271 @@ function IconCheckCircle({ className }: { className?: string }) {
   );
 }
 
-const navLinks = ["Produkte", "Lösungen", "Ressourcen", "Über uns"];
+const serviceOptions = [
+  { value: "pv", label: "PV-Netzanmeldung (Solar)" },
+  { value: "wp", label: "Wärmepumpen-Anmeldung" },
+  { value: "wallbox", label: "Wallbox-Anmeldung" },
+  { value: "mehrere", label: "Mehrere Anmeldungstypen" },
+];
 
-export default function ContactPage() {
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const initialService = searchParams.get("service") ?? "";
+
   const [submitted, setSubmitted] = useState(false);
-  const [serviceType, setServiceType] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [serviceType, setServiceType] = useState(initialService);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, phone, serviceType, message }),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+    } catch {
+      setError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen text-slate-900">
+      {/* Background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-indigo-100/40 pointer-events-none" />
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-blue-200/35 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-violet-200/25 rounded-full blur-3xl" />
+      </div>
+
       {/* ── Header ── */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100 shadow-sm">
+      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-white/50 shadow-sm shadow-indigo-100/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center shadow-md shadow-indigo-300/40">
               <IconBolt className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">awatt</span>
+            <span className="text-lg font-bold tracking-tight text-slate-900">
+              PV Anmeldung 24
+            </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
-              >
-                {link}
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="text-slate-600">
-              Login
-            </Button>
-            <Button size="sm" className="bg-indigo-600 hover:bg-indigo-700 text-white">
-              Demo buchen
-            </Button>
-          </div>
+          <a
+            href="/#leistungen"
+            className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors"
+          >
+            Zurück zur Startseite
+          </a>
         </div>
       </header>
 
       {/* ── Page content ── */}
-      <main className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
+      <main className="relative max-w-2xl mx-auto px-4 sm:px-6 py-16">
         {!submitted ? (
           <>
             <div className="mb-10 text-center">
-              <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Jetzt registrieren
+              <span className="inline-block mb-4 text-xs font-bold tracking-widest text-indigo-600 uppercase">
+                Kontaktformular
+              </span>
+              <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+                Kontakt aufnehmen
               </h1>
-              <p className="mt-3 text-slate-500 text-base">
-                Starten Sie noch heute – unser Team meldet sich innerhalb von 24 Stunden bei Ihnen.
+              <p className="mt-3 text-slate-500 text-base max-w-md mx-auto">
+                Schildern Sie uns Ihr Projekt – wir melden uns innerhalb von 24 Stunden persönlich bei Ihnen.
               </p>
             </div>
 
-            <Card className="shadow-md border-slate-200">
-              <CardHeader>
-                <CardTitle className="text-lg">Ihre Angaben</CardTitle>
-                <CardDescription>
-                  Alle mit <span className="text-red-500">*</span> markierten Felder sind Pflichtfelder.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">
-                        Vorname <span className="text-red-500">*</span>
-                      </Label>
-                      <Input id="firstName" name="firstName" placeholder="Max" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">
-                        Nachname <span className="text-red-500">*</span>
-                      </Label>
-                      <Input id="lastName" name="lastName" placeholder="Mustermann" required />
-                    </div>
-                  </div>
-
-                  {/* Email + Phone */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        E-Mail-Adresse <span className="text-red-500">*</span>
-                      </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="max@firma.de"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Telefonnummer</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+49 151 00000000"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Company */}
-                  <div className="space-y-2">
-                    <Label htmlFor="company">
-                      Firmenname <span className="text-red-500">*</span>
-                    </Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      placeholder="Musterfirma GmbH"
-                      required
-                    />
-                  </div>
-
-                  {/* Service type */}
-                  <div className="space-y-2">
-                    <Label htmlFor="serviceType">
-                      Art der Anmeldung <span className="text-red-500">*</span>
-                    </Label>
-                    <Select
-                      required
-                      value={serviceType}
-                      onValueChange={(v) => setServiceType(v ?? "")}
-                    >
-                      <SelectTrigger id="serviceType" className="w-full">
-                        <SelectValue placeholder="Bitte wählen…" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="pv">PV-Netzanmeldung (Solar)</SelectItem>
-                        <SelectItem value="wp">Wärmepumpen-Anmeldung</SelectItem>
-                        <SelectItem value="wallbox">Wallbox-Anmeldung</SelectItem>
-                        <SelectItem value="mehrere">Mehrere Anmeldungstypen</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Projects per month */}
-                  <div className="space-y-2">
-                    <Label htmlFor="volume">Projekte pro Monat (ca.)</Label>
-                    <Select>
-                      <SelectTrigger id="volume" className="w-full">
-                        <SelectValue placeholder="Bitte wählen…" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1-5">1–5 Projekte</SelectItem>
-                        <SelectItem value="6-20">6–20 Projekte</SelectItem>
-                        <SelectItem value="21-50">21–50 Projekte</SelectItem>
-                        <SelectItem value="50+">Mehr als 50 Projekte</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Anmerkungen / Fragen</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Haben Sie spezielle Anforderungen oder Fragen?"
-                      className="resize-none"
-                      rows={4}
-                    />
-                  </div>
-
-                  {/* Privacy */}
-                  <div className="flex items-start gap-3">
-                    <input
-                      id="privacy"
-                      name="privacy"
-                      type="checkbox"
-                      required
-                      className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 accent-indigo-600"
-                    />
-                    <label htmlFor="privacy" className="text-sm text-slate-500 leading-snug">
-                      Ich habe die{" "}
-                      <a href="#" className="text-indigo-600 hover:underline">
-                        Datenschutzerklärung
-                      </a>{" "}
-                      gelesen und stimme der Verarbeitung meiner Daten zu.{" "}
-                      <span className="text-red-500">*</span>
+            {/* Glass card */}
+            <div className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-indigo-100/40 p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-700">
+                      Vorname <span className="text-red-500">*</span>
                     </label>
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Max"
+                      required
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all"
+                    />
                   </div>
+                  <div className="space-y-1.5">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-700">
+                      Nachname <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Mustermann"
+                      required
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all"
+                    />
+                  </div>
+                </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3"
-                    size="lg"
+                {/* Email + Phone */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700">
+                      E-Mail-Adresse <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="max@firma.de"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700">
+                      Telefonnummer
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+49 151 00000000"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all"
+                    />
+                  </div>
+                </div>
+
+                {/* Service type */}
+                <div className="space-y-1.5">
+                  <label htmlFor="serviceType" className="block text-sm font-medium text-slate-700">
+                    Art der Anmeldung <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="serviceType"
+                    name="serviceType"
+                    required
+                    value={serviceType}
+                    onChange={(e) => setServiceType(e.target.value)}
+                    className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all appearance-none"
                   >
-                    Registrierung absenden
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                    <option value="" disabled>Bitte wählen…</option>
+                    {serviceOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-700">
+                    Anmerkungen / Fragen
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Haben Sie spezielle Anforderungen oder Fragen?"
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full rounded-xl border border-white/60 bg-white/70 backdrop-blur-sm px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all resize-none"
+                  />
+                </div>
+
+                {/* Privacy */}
+                <div className="flex items-start gap-3">
+                  <input
+                    id="privacy"
+                    name="privacy"
+                    type="checkbox"
+                    required
+                    className="mt-1 h-4 w-4 rounded border-slate-300 accent-indigo-600"
+                  />
+                  <label htmlFor="privacy" className="text-sm text-slate-500 leading-snug">
+                    Ich habe die{" "}
+                    <a href="#" className="text-indigo-600 hover:underline">
+                      Datenschutzerklärung
+                    </a>{" "}
+                    gelesen und stimme der Verarbeitung meiner Daten zu.{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                </div>
+
+                {error && (
+                  <p className="text-sm text-red-500 text-center">{error}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3.5 text-base shadow-md shadow-indigo-300/40 transition-all hover:shadow-lg hover:shadow-indigo-300/50"
+                >
+                  {loading ? "Wird gesendet…" : "Anfrage absenden"}
+                </button>
+              </form>
+            </div>
           </>
         ) : (
           /* ── Success state ── */
-          <div className="text-center py-24 flex flex-col items-center gap-5">
-            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-              <IconCheckCircle className="w-8 h-8 text-green-600" />
+          <div className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-indigo-100/40 p-12 text-center flex flex-col items-center gap-5">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-green-200/50">
+              <IconCheckCircle className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900">Vielen Dank!</h2>
-            <p className="text-slate-500 max-w-sm">
+            <p className="text-slate-500 max-w-sm text-sm leading-relaxed">
               Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von{" "}
-              <strong>24 Stunden</strong> bei Ihnen.
+              <strong className="text-slate-700">24 Stunden</strong> persönlich bei Ihnen.
             </p>
-            <Button
-              variant="outline"
-              className="mt-4"
-              onClick={() => (window.location.href = "/")}
+            <a
+              href="/"
+              className="mt-4 inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white/80 hover:bg-white text-slate-700 font-medium px-6 py-2.5 text-sm shadow-sm transition-all"
             >
               Zurück zur Startseite
-            </Button>
+            </a>
           </div>
         )}
       </main>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-slate-100 bg-slate-50 py-10 mt-16">
+      <footer className="relative border-t border-white/40 backdrop-blur-sm bg-white/30 py-10 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-          <span>© 2026 awatt GmbH. Alle Rechte vorbehalten.</span>
+          <span>© {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.</span>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-600 transition-colors">Impressum</a>
+            <a href="/impressum" className="hover:text-slate-600 transition-colors">Impressum</a>
             <a href="#" className="hover:text-slate-600 transition-colors">Datenschutz</a>
             <a href="#" className="hover:text-slate-600 transition-colors">AGB</a>
           </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense>
+      <ContactForm />
+    </Suspense>
   );
 }
