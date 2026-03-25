@@ -130,8 +130,12 @@ const features = [
     description:
       "Vollständige Abwicklung Ihrer Photovoltaik-Anmeldung beim Netzbetreiber.",
     items: [
-      "Vorbereitung & Anmeldung: Formulare, Einpolige Schaltpläne, Komponentennachweise",
-      "Fertigmeldung: E8-Protokolle, Inbetriebnahmedokumentation, Zählerumbauverlangen",
+      "Netzverträglichkeitsprüfung",
+      "Anmeldung der Erzeugungsanlage",
+      "Anmeldung der Speichereinheit (falls vorhanden)",
+      "Anmeldung der Gesamtanlage beim Netzbetreiber",
+      "Anmeldung nach §14a EnWG (steuerbare Verbraucher, falls relevant)",
+      "Registrierung im Marktstammdatenregister",
       "Marktstammdatenregister-Anmeldung",
     ],
   },
@@ -146,7 +150,6 @@ const features = [
     items: [
       "Formularvervollständigung beim Netzbetreiber",
       "Dokumentation Zählermontage/-demontage",
-      "Marktstammdatenregister-Anmeldung",
     ],
   },
   {
@@ -164,6 +167,20 @@ const features = [
     ],
   },
   {
+    Icon: IconMeter,
+    badge: "Zähler",
+    serviceKey: "zaehler",
+    title: "Zählertausch",
+    price: "249 €",
+    hideUnit: true,
+    description:
+      "Ob Zählertausch, iMSys-Zähler oder Hausanschlusskasten, wir kümmern uns um alles.",
+    items: [
+      "Zählertausch & iMSys-Zähler",
+      "Vollständige Abwicklung mit dem Netzbetreiber",
+    ],
+  },
+  {
     Icon: IconHandshake,
     badge: "Partner",
     serviceKey: "partner",
@@ -176,21 +193,6 @@ const features = [
       "Exklusive Partnerkonditionen",
       "Kundenkonto für Partnerportal",
       "Persönlicher Ansprechpartner",
-    ],
-  },
-  {
-    Icon: IconMeter,
-    badge: "Zähler",
-    serviceKey: "zaehler",
-    title: "Zählerantrag",
-    price: "Auf Anfrage",
-    hideUnit: true,
-    description:
-      "Ob Zählertausch, iMSys-Zähler oder Hausanschlusskasten, wir kümmern uns um alles.",
-    items: [
-      "Zählertausch & iMSys-Zähler",
-      "Hausanschlusskasten",
-      "Vollständige Abwicklung mit dem Netzbetreiber",
     ],
   },
   {
@@ -343,7 +345,7 @@ export default function Home() {
               {[
                 { value: "Bis zu 3 Std.", label: "Zeitersparnis pro Projekt" },
                 { value: "Persönliche Betreuung", label: "Für jeden Kunden" },
-                { value: "Direkter Kontakt", label: "Zum Netzbetreiber" },
+                { value: "Direkter Kontakt", label: "Zu Ihren Projekten" },
               ].map((stat) => (
                 <div
                   key={stat.value}
