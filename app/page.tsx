@@ -324,21 +324,6 @@ const features = [
     ],
   },
   {
-    Icon: IconHandshake,
-    badge: "Partner",
-    serviceKey: "partner",
-    title: "Partner Werden",
-    price: "",
-    hideUnit: true,
-    description:
-      "Werde Partner und sichere dir einen Preisvorteil.",
-    items: [
-      "Exklusive Partnerkonditionen",
-      "Kundenkonto für Partnerportal",
-      "Persönlicher Ansprechpartner",
-    ],
-  },
-  {
     Icon: IconWrench,
     badge: "Sonstiges",
     serviceKey: "sonstige",
@@ -351,6 +336,21 @@ const features = [
       "Individuelle Beratung & Bearbeitung",
       "Vollständige Dokumentation",
       "Persönliche Begleitung bis zum Abschluss",
+    ],
+  },
+  {
+    Icon: IconHandshake,
+    badge: "Partner",
+    serviceKey: "partner",
+    title: "Partner Werden",
+    price: "",
+    hideUnit: true,
+    description:
+      "Werde Partner und sichere dir einen Preisvorteil.",
+    items: [
+      "Exklusive Partnerkonditionen",
+      "Kundenkonto für Partnerportal",
+      "Persönlicher Ansprechpartner",
     ],
   },
 ];
