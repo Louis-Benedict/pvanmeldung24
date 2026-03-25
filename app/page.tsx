@@ -118,6 +118,147 @@ function IconStar({ className }: { className?: string }) {
   );
 }
 
+// ── Energy Flow Diagram ────────────────────────────────────────────────────────
+
+function EnergyFlowDiagram() {
+  return (
+    <>
+      <style>{`
+        @keyframes ef-appear {
+          from { opacity: 0; transform: translateY(8px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes ef-draw {
+          from { stroke-dashoffset: 32; }
+          to   { stroke-dashoffset: 0; }
+        }
+        @keyframes ef-ring {
+          0%, 100% { opacity: 0.25; transform: scale(1); }
+          50%       { opacity: 0.6;  transform: scale(1.6); }
+        }
+        @keyframes ef-done {
+          from { opacity: 0; transform: scale(0.88); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        .ef-n1 { opacity:0; animation: ef-appear .5s ease forwards .2s; }
+        .ef-n2 { opacity:0; animation: ef-appear .5s ease forwards .9s; }
+        .ef-n3 { opacity:0; animation: ef-appear .5s ease forwards 1.6s; }
+        .ef-n4 { opacity:0; animation: ef-appear .5s ease forwards 2.3s; }
+        .ef-l1 { stroke-dasharray:32; stroke-dashoffset:32; animation: ef-draw .35s ease forwards .72s; }
+        .ef-l2 { stroke-dasharray:32; stroke-dashoffset:32; animation: ef-draw .35s ease forwards 1.42s; }
+        .ef-l3 { stroke-dasharray:32; stroke-dashoffset:32; animation: ef-draw .35s ease forwards 2.12s; }
+        .ef-badge { opacity:0; animation: ef-done .6s ease forwards 2.8s; }
+        .ef-r1 { animation: ef-ring 2.6s ease-in-out infinite  .2s; transform-origin: 208px 37px; }
+        .ef-r2 { animation: ef-ring 2.6s ease-in-out infinite  .9s; transform-origin: 208px 125px; }
+        .ef-r3 { animation: ef-ring 2.6s ease-in-out infinite 1.6s; transform-origin: 208px 213px; }
+        .ef-r4 { animation: ef-ring 2.6s ease-in-out infinite 2.3s; transform-origin: 208px 301px; }
+      `}</style>
+
+      <div className="backdrop-blur-xl bg-white/8 border border-white/15 rounded-3xl p-5 w-full max-w-xs mx-auto lg:mx-0">
+        <svg viewBox="0 0 220 375" className="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="ef-glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="2.5" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+
+          {/* ── Node 1 – PV-Anlage ── */}
+          <g className="ef-n1">
+            <rect x="4" y="8" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
+            <circle cx="34" cy="37" r="17" fill="#2BB33A" fillOpacity="0.18" />
+            {/* sun */}
+            <circle cx="34" cy="37" r="5.5" stroke="#2BB33A" strokeWidth="1.6" />
+            <line x1="34" y1="24" x2="34" y2="22" stroke="#2BB33A" strokeWidth="1.6" strokeLinecap="round" />
+            <line x1="34" y1="50" x2="34" y2="52" stroke="#2BB33A" strokeWidth="1.6" strokeLinecap="round" />
+            <line x1="21" y1="37" x2="19" y2="37" stroke="#2BB33A" strokeWidth="1.6" strokeLinecap="round" />
+            <line x1="47" y1="37" x2="49" y2="37" stroke="#2BB33A" strokeWidth="1.6" strokeLinecap="round" />
+            <line x1="25.5" y1="28.5" x2="24.1" y2="27.1" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="42.5" y1="45.5" x2="43.9" y2="46.9" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="42.5" y1="28.5" x2="43.9" y2="27.1" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="25.5" y1="45.5" x2="24.1" y2="46.9" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <text x="62" y="31" fill="white" fontSize="10.5" fontWeight="600">PV-Anlage</text>
+            <text x="62" y="47" fill="white" fillOpacity="0.4" fontSize="9">Photovoltaik-System</text>
+            <circle cx="208" cy="37" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r1" />
+            <circle cx="208" cy="37" r="3" fill="#2BB33A" />
+          </g>
+
+          {/* ── Line 1 ── */}
+          <line className="ef-l1" x1="110" y1="66" x2="110" y2="96" stroke="#2BB33A" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
+          <circle r="3.5" fill="#2BB33A" filter="url(#ef-glow)">
+            <animateMotion dur="1.1s" repeatCount="indefinite" begin="0.72s" path="M 110 66 L 110 96" />
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="0.72s" />
+          </circle>
+
+          {/* ── Node 2 – Wechselrichter ── */}
+          <g className="ef-n2">
+            <rect x="4" y="96" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
+            <circle cx="34" cy="125" r="17" fill="#2BB33A" fillOpacity="0.18" />
+            {/* bolt */}
+            <path d="M37 113 L28 126.5 L33.5 126.5 L31 137 L41 123.5 L35.5 123.5 Z" stroke="#2BB33A" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" />
+            <text x="62" y="119" fill="white" fontSize="10.5" fontWeight="600">Wechselrichter</text>
+            <text x="62" y="135" fill="white" fillOpacity="0.4" fontSize="9">Energieumwandlung</text>
+            <circle cx="208" cy="125" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r2" />
+            <circle cx="208" cy="125" r="3" fill="#2BB33A" />
+          </g>
+
+          {/* ── Line 2 ── */}
+          <line className="ef-l2" x1="110" y1="154" x2="110" y2="184" stroke="#2BB33A" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
+          <circle r="3.5" fill="#2BB33A" filter="url(#ef-glow)">
+            <animateMotion dur="1.1s" repeatCount="indefinite" begin="1.42s" path="M 110 154 L 110 184" />
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="1.42s" />
+          </circle>
+
+          {/* ── Node 3 – Zähler ── */}
+          <g className="ef-n3">
+            <rect x="4" y="184" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
+            <circle cx="34" cy="213" r="17" fill="#2BB33A" fillOpacity="0.18" />
+            {/* gauge */}
+            <path d="M21 218 a13 13 0 0 1 26 0" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <circle cx="34" cy="218" r="2.5" fill="#2BB33A" />
+            <line x1="34" y1="215.5" x2="27" y2="208" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <text x="62" y="207" fill="white" fontSize="10.5" fontWeight="600">Zähler</text>
+            <text x="62" y="223" fill="white" fillOpacity="0.4" fontSize="9">Digitaler Stromzähler</text>
+            <circle cx="208" cy="213" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r3" />
+            <circle cx="208" cy="213" r="3" fill="#2BB33A" />
+          </g>
+
+          {/* ── Line 3 ── */}
+          <line className="ef-l3" x1="110" y1="242" x2="110" y2="272" stroke="#2BB33A" strokeOpacity="0.5" strokeWidth="2" strokeLinecap="round" />
+          <circle r="3.5" fill="#2BB33A" filter="url(#ef-glow)">
+            <animateMotion dur="1.1s" repeatCount="indefinite" begin="2.12s" path="M 110 242 L 110 272" />
+            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="1.1s" repeatCount="indefinite" begin="2.12s" />
+          </circle>
+
+          {/* ── Node 4 – Netzbetreiber ── */}
+          <g className="ef-n4">
+            <rect x="4" y="272" width="212" height="58" rx="12" fill="white" fillOpacity="0.07" stroke="white" strokeOpacity="0.12" />
+            <circle cx="34" cy="301" r="17" fill="#2BB33A" fillOpacity="0.18" />
+            {/* power tower */}
+            <line x1="34" y1="290" x2="34" y2="313" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <line x1="24" y1="294" x2="44" y2="294" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="26" y1="301" x2="42" y2="301" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="24" y1="294" x2="28" y2="313" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="44" y1="294" x2="40" y2="313" stroke="#2BB33A" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="20" y1="313" x2="48" y2="313" stroke="#2BB33A" strokeWidth="1.7" strokeLinecap="round" />
+            <text x="62" y="295" fill="white" fontSize="10.5" fontWeight="600">Netzbetreiber</text>
+            <text x="62" y="311" fill="white" fillOpacity="0.4" fontSize="9">Öffentliches Stromnetz</text>
+            <circle cx="208" cy="301" r="6" fill="#2BB33A" fillOpacity="0.2" className="ef-r4" />
+            <circle cx="208" cy="301" r="3" fill="#2BB33A" />
+          </g>
+
+          {/* ── Status badge ── */}
+          <g className="ef-badge">
+            <rect x="46" y="346" width="128" height="24" rx="12" fill="#2BB33A" fillOpacity="0.18" stroke="#2BB33A" strokeOpacity="0.45" strokeWidth="1" />
+            <polyline points="68,358 75,365 88,350" stroke="#2BB33A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <text x="96" y="362" fill="#2BB33A" fontSize="10" fontWeight="600">Angemeldet</text>
+          </g>
+        </svg>
+      </div>
+    </>
+  );
+}
+
 // ── Static data ────────────────────────────────────────────────────────────────
 
 const features = [
@@ -174,7 +315,7 @@ const features = [
     price: "249 €",
     hideUnit: true,
     description:
-      "Ob Zählertausch, iMSys-Zähler oder Hausanschlusskasten, wir kümmern uns um alles.",
+      "",
     items: [
       "Zählertausch & iMSys-Zähler",
       "Vollständige Abwicklung mit dem Netzbetreiber",
@@ -307,34 +448,39 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
-            <div className="max-w-3xl">
-              <Badge className="mb-6 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
-                Professionelle Netzanmeldung
-              </Badge>
-              <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                Netzanmeldung{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2BB33A] to-[#6ddc79]">
-                  leicht gemacht
-                </span>
-              </h1>
-              <p className="text-xl text-neutral-300 mb-10 leading-relaxed max-w-2xl">
-                Wir übernehmen die komplette Netzanmeldung für Sie – von der
-                Vorprüfung bis zur finalen Genehmigung. Persönlich, zuverlässig,
-                ohne Aufwand für Sie.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold px-8 py-3 text-base shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:shadow-black/40"
-                >
-                  Kontakt aufnehmen
-                </a>
-                <a
-                  href="#leistungen"
-                  className="inline-flex items-center justify-center rounded-xl border border-white/25 text-white hover:bg-white/10 hover:border-white/40 font-semibold px-8 py-3 text-base backdrop-blur-sm transition-all"
-                >
-                  Mehr erfahren
-                </a>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div>
+                <Badge className="mb-6 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
+                  Professionelle Netzanmeldung
+                </Badge>
+                <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+                  Netzanmeldung{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2BB33A] to-[#6ddc79]">
+                    leicht gemacht
+                  </span>
+                </h1>
+                <p className="text-xl text-neutral-300 mb-10 leading-relaxed">
+                  Wir übernehmen die komplette Netzanmeldung für Sie – von der
+                  Vorprüfung bis zur finalen Genehmigung. Persönlich, zuverlässig,
+                  ohne Aufwand für Sie.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold px-8 py-3 text-base shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:shadow-black/40"
+                  >
+                    Kontakt aufnehmen
+                  </a>
+                  <a
+                    href="#leistungen"
+                    className="inline-flex items-center justify-center rounded-xl border border-white/25 text-white hover:bg-white/10 hover:border-white/40 font-semibold px-8 py-3 text-base backdrop-blur-sm transition-all"
+                  >
+                    Mehr erfahren
+                  </a>
+                </div>
+              </div>
+              <div className="hidden lg:flex items-center justify-center">
+                <EnergyFlowDiagram />
               </div>
             </div>
           </div>
