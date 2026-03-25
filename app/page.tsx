@@ -267,15 +267,15 @@ const benefits = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/40 to-indigo-50/30 text-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 text-neutral-900">
       {/* ── Header ── */}
-      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-white/50 shadow-sm shadow-indigo-100/30">
+      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-neutral-200/60 shadow-sm shadow-neutral-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center shadow-md shadow-indigo-300/40">
+            <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center shadow-md shadow-[#2BB33A]/30">
               <IconBolt className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">
+            <span className="text-lg font-bold tracking-tight text-neutral-900">
               PV Anmeldung 24
             </span>
           </a>
@@ -283,13 +283,13 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a
               href="tel:+4945418856891"
-              className="text-sm font-semibold text-slate-700 underline underline-offset-2 hover:text-indigo-600 transition-colors"
+              className="text-sm font-semibold text-neutral-700 underline underline-offset-2 hover:text-[#2BB33A] transition-colors"
             >
               +49 4541 8856891
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2 shadow-md shadow-indigo-300/40 transition-all hover:shadow-lg hover:shadow-indigo-300/50"
+              className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white text-sm font-semibold px-4 py-2 shadow-md shadow-[#2BB33A]/30 transition-all hover:shadow-lg hover:shadow-[#2BB33A]/40"
             >
               Kontakt aufnehmen
             </a>
@@ -299,25 +299,25 @@ export default function Home() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+        <section className="relative overflow-hidden bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 text-white">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-indigo-500/15 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2BB33A]/12 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2BB33A]/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neutral-700/20 rounded-full blur-3xl" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
             <div className="max-w-3xl">
-              <Badge className="mb-6 bg-white/10 text-indigo-200 border-white/20 backdrop-blur-sm">
+              <Badge className="mb-6 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
                 Professionelle Netzanmeldung
               </Badge>
               <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
                 Netzanmeldung{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2BB33A] to-[#6ddc79]">
                   leicht gemacht
                 </span>
               </h1>
-              <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+              <p className="text-xl text-neutral-300 mb-10 leading-relaxed max-w-2xl">
                 Wir übernehmen die komplette Netzanmeldung für Sie – von der
                 Vorprüfung bis zur finalen Genehmigung. Persönlich, zuverlässig,
                 ohne Aufwand für Sie.
@@ -325,7 +325,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3 text-base shadow-lg shadow-indigo-900/50 transition-all hover:shadow-xl hover:shadow-indigo-900/60"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold px-8 py-3 text-base shadow-lg shadow-black/30 transition-all hover:shadow-xl hover:shadow-black/40"
                 >
                   Kontakt aufnehmen
                 </a>
@@ -352,7 +352,7 @@ export default function Home() {
                   className="flex flex-col items-center text-center py-2 sm:py-0 sm:px-8 first:pl-0 last:pr-0"
                 >
                   <span className="text-xl font-bold text-white">{stat.value}</span>
-                  <span className="text-indigo-300 text-sm mt-0.5">{stat.label}</span>
+                  <span className="text-neutral-400 text-sm mt-0.5">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -363,20 +363,20 @@ export default function Home() {
         <section id="leistungen" className="py-24 relative overflow-hidden">
           {/* Background blobs for glass effect */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-16 left-8 w-80 h-80 bg-indigo-200/40 rounded-full blur-3xl" />
-            <div className="absolute bottom-16 right-8 w-96 h-96 bg-blue-200/35 rounded-full blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-violet-200/25 rounded-full blur-3xl" />
+            <div className="absolute top-16 left-8 w-80 h-80 bg-neutral-300/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-16 right-8 w-96 h-96 bg-neutral-200/40 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#2BB33A]/6 rounded-full blur-3xl" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-indigo-100/80 text-indigo-700 border-indigo-200/60 backdrop-blur-sm">
+              <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30 backdrop-blur-sm">
                 Unsere Leistungen
               </Badge>
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
                 Alles aus einer Hand
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                 Von der PV-Anlage über die Wärmepumpe bis zur Wallbox – wir
                 kümmern uns um jede Art der Netzanmeldung.
               </p>
@@ -386,26 +386,26 @@ export default function Home() {
               {features.map((feature) => (
                 <div
                   key={feature.title}
-                  className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-indigo-100/40 p-8 flex flex-col hover:bg-white/80 hover:shadow-indigo-200/50 transition-all duration-300"
+                  className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-2xl shadow-neutral-300/30 p-8 flex flex-col hover:bg-white/80 hover:shadow-neutral-300/50 transition-all duration-300"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 border border-indigo-200/50 flex items-center justify-center mb-4 backdrop-blur-sm">
-                      <feature.Icon className="w-6 h-6 text-indigo-600" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#2BB33A]/12 border border-[#2BB33A]/25 flex items-center justify-center mb-4">
+                      <feature.Icon className="w-6 h-6 text-[#2BB33A]" />
                     </div>
-                    <Badge className="mb-3 bg-indigo-50/80 text-indigo-600 border-indigo-200/60 text-xs">
+                    <Badge className="mb-3 bg-neutral-100/80 text-neutral-600 border-neutral-200/60 text-xs">
                       {feature.badge}
                     </Badge>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-slate-500 text-sm mb-5">
+                    <p className="text-neutral-500 text-sm mb-5">
                       {feature.description}
                     </p>
                     <ul className="space-y-2.5 mb-6">
                       {feature.items.map((item) => (
                         <li key={item} className="flex items-start gap-2.5">
-                          <IconCheckCircle className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
-                          <span className="text-sm text-slate-600 leading-snug">
+                          <IconCheckCircle className="w-4 h-4 text-[#2BB33A] mt-0.5 shrink-0" />
+                          <span className="text-sm text-neutral-600 leading-snug">
                             {item}
                           </span>
                         </li>
@@ -414,16 +414,16 @@ export default function Home() {
                   </div>
 
                   {/* Price + CTA pushed to bottom */}
-                  <div className="mt-auto pt-5 border-t border-white/50">
-                    <p className="text-3xl font-extrabold text-slate-900 mb-4">
+                  <div className="mt-auto pt-5 border-t border-neutral-100/80">
+                    <p className="text-3xl font-extrabold text-neutral-900 mb-4">
                       {feature.price}
                       {!feature.hideUnit && (
-                        <span className="text-sm font-normal text-slate-400 ml-1">/ Anmeldung</span>
+                        <span className="text-sm font-normal text-neutral-400 ml-1">/ Anmeldung</span>
                       )}
                     </p>
                     <a
                       href={`/contact?service=${feature.serviceKey}`}
-                      className="flex items-center justify-center w-full rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 text-sm shadow-md shadow-indigo-300/30 transition-all hover:shadow-lg hover:shadow-indigo-300/40"
+                      className="flex items-center justify-center w-full rounded-xl bg-[#2BB33A] hover:bg-[#249930] text-white font-semibold py-3 text-sm shadow-md shadow-[#2BB33A]/20 transition-all hover:shadow-lg hover:shadow-[#2BB33A]/30"
                     >
                       Kontakt aufnehmen
                     </a>
@@ -436,21 +436,21 @@ export default function Home() {
 
         {/* ── How it works ── */}
         <section id="funktionsweise" className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-950 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 pointer-events-none" />
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#2BB33A]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#2BB33A]/7 rounded-full blur-3xl" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-white/10 text-indigo-300 border-white/20 backdrop-blur-sm">
+              <Badge className="mb-4 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
                 So geht&#39;s
               </Badge>
               <h2 className="text-4xl font-bold text-white mb-4">
                 In drei Schritten zur genehmigten Anlage
               </h2>
-              <p className="text-lg text-indigo-200 max-w-2xl mx-auto">
+              <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
                 Unser Prozess ist einfach, transparent und vollständig von uns betreut.
               </p>
             </div>
@@ -461,16 +461,16 @@ export default function Home() {
                   key={step.number}
                   className="backdrop-blur-xl bg-white/8 border border-white/15 rounded-3xl p-8 text-center hover:bg-white/12 transition-all duration-300"
                 >
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center mb-6 mx-auto shadow-lg shadow-indigo-900/50">
+                  <div className="w-20 h-20 rounded-2xl bg-[#2BB33A] flex items-center justify-center mb-6 mx-auto shadow-lg shadow-black/40">
                     <step.Icon className="w-8 h-8 text-white" />
                   </div>
-                  <span className="text-xs font-bold text-indigo-400 tracking-widest mb-3 uppercase block">
+                  <span className="text-xs font-bold text-[#2BB33A] tracking-widest mb-3 uppercase block">
                     Schritt {step.number}
                   </span>
                   <h3 className="text-xl font-bold text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-indigo-200 text-sm leading-relaxed">
+                  <p className="text-neutral-400 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -482,17 +482,17 @@ export default function Home() {
         {/* ── Benefits ── */}
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-10 right-16 w-72 h-72 bg-blue-200/40 rounded-full blur-3xl" />
-            <div className="absolute bottom-10 left-16 w-80 h-80 bg-indigo-200/35 rounded-full blur-3xl" />
+            <div className="absolute top-10 right-16 w-72 h-72 bg-neutral-200/40 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-16 w-80 h-80 bg-neutral-300/30 rounded-full blur-3xl" />
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-indigo-100/80 text-indigo-700 border-indigo-200/60 backdrop-blur-sm">
+              <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30 backdrop-blur-sm">
                 Ihre Vorteile
               </Badge>
-              <h2 className="text-4xl font-bold text-slate-900 mb-4">Warum PV Anmeldung 24?</h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">Warum PV Anmeldung 24?</h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                 Mehr Zeit für Ihr Kerngeschäft – weniger Aufwand für Bürokratie.
               </p>
             </div>
@@ -501,13 +501,13 @@ export default function Home() {
               {benefits.map((benefit) => (
                 <div
                   key={benefit.title}
-                  className="backdrop-blur-2xl bg-white/60 border border-white/55 rounded-3xl p-6 shadow-xl shadow-indigo-100/30 hover:bg-white/75 hover:shadow-indigo-200/40 transition-all duration-300"
+                  className="backdrop-blur-2xl bg-white/60 border border-white/55 rounded-3xl p-6 shadow-xl shadow-neutral-200/40 hover:bg-white/75 hover:shadow-neutral-300/40 transition-all duration-300"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500/15 to-blue-500/15 border border-indigo-200/40 flex items-center justify-center mb-4">
-                    <benefit.Icon className="w-5 h-5 text-indigo-600" />
+                  <div className="w-11 h-11 rounded-xl bg-[#2BB33A]/12 border border-[#2BB33A]/25 flex items-center justify-center mb-4">
+                    <benefit.Icon className="w-5 h-5 text-[#2BB33A]" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{benefit.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">{benefit.title}</h3>
+                  <p className="text-neutral-500 text-sm leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -519,7 +519,7 @@ export default function Home() {
         {/* ── CTA ── */}
         <section className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-700" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1e7a27] via-[#2BB33A] to-[#1e7a27]" />
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
           </div>
@@ -531,13 +531,13 @@ export default function Home() {
             <h2 className="text-4xl font-extrabold text-white mb-4">
               Bereit loszulegen?
             </h2>
-            <p className="text-indigo-100 text-lg mb-10 leading-relaxed">
+            <p className="text-neutral-100 text-lg mb-10 leading-relaxed">
               Nehmen Sie noch heute Kontakt auf – unser Team meldet sich innerhalb
               von 24 Stunden bei Ihnen und bespricht alle Details persönlich mit Ihnen.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-indigo-700 hover:bg-indigo-50 font-bold px-10 py-4 text-base shadow-xl shadow-indigo-900/30 transition-all hover:shadow-2xl hover:shadow-indigo-900/40"
+              className="inline-flex items-center justify-center rounded-xl bg-white text-[#1e7a27] hover:bg-neutral-50 font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
             >
               Kontakt aufnehmen
             </a>
@@ -546,17 +546,17 @@ export default function Home() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="bg-slate-950 text-slate-400 py-16">
+      <footer className="bg-neutral-950 text-neutral-400 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center">
                   <IconBolt className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-base font-bold text-white">PV Anmeldung 24</span>
               </div>
-              <p className="text-sm leading-relaxed text-slate-500">
+              <p className="text-sm leading-relaxed text-neutral-500">
                 Ihr professioneller Partner für alle Arten der Netzanmeldung in
                 Deutschland.
               </p>
@@ -568,7 +568,7 @@ export default function Home() {
                 {["PV-Netzanmeldung", "Wärmepumpen-Anmeldung", "Wallbox-Anmeldung"].map(
                   (item) => (
                     <li key={item}>
-                      <a href="#leistungen" className="hover:text-indigo-400 transition-colors">
+                      <a href="#leistungen" className="hover:text-[#2BB33A] transition-colors">
                         {item}
                       </a>
                     </li>
@@ -585,7 +585,7 @@ export default function Home() {
                   { label: "So geht's", href: "#funktionsweise" },
                 ].map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:text-indigo-400 transition-colors">
+                    <a href={item.href} className="hover:text-[#2BB33A] transition-colors">
                       {item.label}
                     </a>
                   </li>
@@ -602,7 +602,7 @@ export default function Home() {
                   { label: "AGB", href: "#" },
                 ].map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:text-indigo-400 transition-colors">
+                    <a href={item.href} className="hover:text-[#2BB33A] transition-colors">
                       {item.label}
                     </a>
                   </li>
@@ -611,9 +611,9 @@ export default function Home() {
             </div>
           </div>
 
-          <Separator className="bg-slate-800 mb-8" />
+          <Separator className="bg-neutral-800 mb-8" />
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-slate-600">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-neutral-600">
             <p>
               &copy; {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.
             </p>
