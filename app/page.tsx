@@ -164,32 +164,17 @@ const features = [
     ],
   },
   {
-    Icon: IconWrench,
-    badge: "Sonstiges",
-    serviceKey: "sonstige",
-    title: "Sonstige Anlagen",
-    price: "Auf Anfrage",
-    hideUnit: true,
-    description:
-      "Netzanmeldung für weitere Anlagentypen – sprechen Sie uns einfach an.",
-    items: [
-      "Individuelle Beratung & Bearbeitung",
-      "Vollständige Dokumentation",
-      "Persönliche Begleitung bis zum Abschluss",
-    ],
-  },
-  {
     Icon: IconHandshake,
     badge: "Partner",
     serviceKey: "partner",
     title: "Partner Werden",
-    price: "Kostenlos",
+    price: "",
     hideUnit: true,
     description:
       "Werde Partner und sichere dir einen Preisvorteil.",
     items: [
       "Exklusive Partnerkonditionen",
-      "Bevorzugte Bearbeitung",
+      "Kundenkonto für Partnerportal",
       "Persönlicher Ansprechpartner",
     ],
   },
@@ -206,6 +191,21 @@ const features = [
       "Zählertausch & iMSys-Zähler",
       "Hausanschlusskasten",
       "Vollständige Abwicklung mit dem Netzbetreiber",
+    ],
+  },
+  {
+    Icon: IconWrench,
+    badge: "Sonstiges",
+    serviceKey: "sonstige",
+    title: "Sonstige Anlagen",
+    price: "Auf Anfrage",
+    hideUnit: true,
+    description:
+      "Netzanmeldung für weitere Anlagentypen – sprechen Sie uns einfach an.",
+    items: [
+      "Individuelle Beratung & Bearbeitung",
+      "Vollständige Dokumentation",
+      "Persönliche Begleitung bis zum Abschluss",
     ],
   },
 ];
