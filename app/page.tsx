@@ -464,7 +464,7 @@ export default function Home() {
                 <Badge className="mb-6 bg-white/10 text-neutral-300 border-white/20 backdrop-blur-sm">
                   Professionelle Netzanmeldung
                 </Badge>
-                <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
                   Netzanmeldung{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2BB33A] to-[#6ddc79]">
                     leicht gemacht
@@ -483,19 +483,13 @@ export default function Home() {
                     Kontakt aufnehmen
                   </a>
                   <a
-                    href="#leistungen"
-                    className="inline-flex items-center justify-center rounded-xl border border-white/25 text-white hover:bg-white/10 hover:border-white/40 font-semibold px-8 py-3 text-base backdrop-blur-sm transition-all"
+                    href="tel:+4945418856891"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 text-white hover:bg-white/10 hover:border-white/40 font-semibold px-8 py-3 text-base backdrop-blur-sm transition-all"
                   >
-                    Mehr erfahren
+                    <IconPhone className="w-4 h-4" />
+                    +49 4541 8856891
                   </a>
                 </div>
-                <a
-                  href="tel:+4945418856891"
-                  className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-neutral-300 hover:text-white transition-colors"
-                >
-                  <IconPhone className="w-4 h-4" />
-                  +49 4541 8856891
-                </a>
               </div>
               <div className="hidden lg:flex items-center justify-center">
                 <EnergyFlowDiagram />
