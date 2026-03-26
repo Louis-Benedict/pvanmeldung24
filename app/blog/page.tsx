@@ -116,23 +116,18 @@ export default function BlogPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1e7a27] via-[#2BB33A] to-[#1e7a27]" />
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
-          </div>
-          <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
-            <h2 className="text-3xl font-extrabold text-white mb-4">
+        <section className="py-20 bg-neutral-100">
+          <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
+            <h2 className="text-3xl font-extrabold text-neutral-900 mb-4">
               Bereit zur Anmeldung?
             </h2>
-            <p className="text-neutral-100 text-lg mb-8 leading-relaxed">
+            <p className="text-neutral-500 text-lg mb-8 leading-relaxed">
               Wir übernehmen die komplette Anmeldung für Sie – schnell, korrekt und
               deutschlandweit.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-[#1e7a27] hover:bg-neutral-50 font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
+              className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
             >
               Jetzt Kontakt aufnehmen
             </a>
