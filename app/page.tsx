@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -419,35 +420,7 @@ const benefits = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 text-neutral-900">
-      {/* ── Header ── */}
-      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-neutral-200/60 shadow-sm shadow-neutral-200/40">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-1.5">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center shadow-md shadow-[#2BB33A]/30">
-              <IconBolt className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-            </div>
-            <span className="text-sm sm:text-lg font-bold tracking-tight text-neutral-900">
-              PV Anmeldung 24
-            </span>
-          </a>
-
-          <div className="flex items-center gap-2 sm:gap-4">
-            <a
-              href="tel:+4945418856891"
-              className="text-sm font-semibold text-neutral-700 underline underline-offset-2 hover:text-[#2BB33A] transition-colors"
-            >
-              +49 4541 8856891
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 shadow-md shadow-neutral-900/20 transition-all hover:shadow-lg hover:shadow-neutral-900/30"
-            >
-              <span className="sm:hidden">Kontakt</span>
-              <span className="hidden sm:inline">Kontakt aufnehmen</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* ── Hero ── */}
@@ -703,82 +676,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="bg-neutral-950 text-neutral-400 py-16">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <div className="md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center">
-                  <IconBolt className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-base font-bold text-white">PV Anmeldung 24</span>
-              </div>
-              <p className="text-sm leading-relaxed text-neutral-500">
-                Ihr professioneller Partner für alle Arten der Netzanmeldung in
-                Deutschland.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">Leistungen</h4>
-              <ul className="space-y-2.5 text-sm">
-                {["PV-Netzanmeldung", "Wärmepumpen-Anmeldung", "Wallbox-Anmeldung"].map(
-                  (item) => (
-                    <li key={item}>
-                      <a href="#leistungen" className="hover:text-[#2BB33A] transition-colors">
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">Kontakt</h4>
-              <ul className="space-y-2.5 text-sm">
-                {[
-                  { label: "Anfrage stellen", href: "/contact" },
-                  { label: "So geht's", href: "#funktionsweise" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="hover:text-[#2BB33A] transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-white mb-4">Rechtliches</h4>
-              <ul className="space-y-2.5 text-sm">
-                {[
-                  { label: "Datenschutz", href: "/datenschutz" },
-                  { label: "Impressum", href: "/impressum" },
-                  { label: "AGB", href: "/agb" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="hover:text-[#2BB33A] transition-colors">
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <Separator className="bg-neutral-800 mb-8" />
-
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-neutral-600">
-            <p>
-              &copy; {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.
-            </p>
-            <p>Made with &#9825; in Deutschland</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
