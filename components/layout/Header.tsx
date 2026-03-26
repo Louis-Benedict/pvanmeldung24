@@ -9,9 +9,9 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="tel:+4945418856891"
-            className="text-sm font-semibold text-neutral-700 underline underline-offset-2 hover:text-[#2BB33A] transition-colors"
+            className="inline-flex items-center justify-center rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 shadow-md shadow-neutral-900/20 transition-all hover:shadow-lg hover:shadow-neutral-900/30"
           >
-            +49 4541 8856891
+            Anrufen
           </a>
           <a
             href="/contact"
