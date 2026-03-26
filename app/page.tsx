@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FAQList from "@/components/FAQList";
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -302,6 +303,7 @@ const features = [
     items: [
       "Formularvervollständigung beim Netzbetreiber",
       "Dokumentation Zählermontage/-demontage",
+      "Anmeldung nach §14a EnWG (steuerbare Verbraucher, falls relevant)"
     ],
   },
   {
@@ -316,6 +318,7 @@ const features = [
       "Anmeldung beim zuständigen Netzbetreiber",
       "Vollständige Dokumentation & Kommunikation",
       "Persönliche Begleitung bis zum Abschluss",
+      "Anmeldung nach §14a EnWG (steuerbare Verbraucher, falls relevant)"
     ],
   },
   {
@@ -648,30 +651,47 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1e7a27] via-[#2BB33A] to-[#1e7a27]" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/8 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
-          </div>
-
+        <section className="py-24 relative overflow-hidden bg-neutral-100">
           <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
-            <Badge className="mb-6 bg-white/15 text-white border-white/25 backdrop-blur-sm">
+            <Badge className="mb-6 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
               Jetzt starten
             </Badge>
-            <h2 className="text-4xl font-extrabold text-white mb-4">
+            <h2 className="text-4xl font-extrabold text-neutral-900 mb-4">
               Bereit loszulegen?
             </h2>
-            <p className="text-neutral-100 text-lg mb-10 leading-relaxed">
+            <p className="text-neutral-500 text-lg mb-10 leading-relaxed">
               Nehmen Sie noch heute Kontakt auf – unser Team meldet sich innerhalb
               von 24 Stunden bei Ihnen und bespricht alle Details persönlich mit Ihnen.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-[#1e7a27] hover:bg-neutral-50 font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
+              className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
             >
               Kontakt aufnehmen
             </a>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-16 left-8 w-80 h-80 bg-neutral-300/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-16 right-8 w-96 h-96 bg-neutral-200/40 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8">
+            <div className="text-center mb-14">
+              <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
+                FAQ
+              </Badge>
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">
+                Häufige Fragen
+              </h2>
+              <p className="text-lg text-neutral-500">
+                Antworten auf die wichtigsten Fragen rund um die Netzanmeldung.
+              </p>
+            </div>
+
+            <FAQList />
           </div>
         </section>
       </main>
