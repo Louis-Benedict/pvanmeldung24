@@ -2,14 +2,8 @@
 
 import { Suspense, useState } from "react";
 import { useSearchParams } from "next/navigation";
-
-function IconBolt({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  );
-}
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 function IconCheckCircle({ className }: { className?: string }) {
   return (
@@ -73,26 +67,7 @@ function ContactForm() {
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#2BB33A]/6 rounded-full blur-3xl" />
       </div>
 
-      {/* ── Header ── */}
-      <header className="sticky top-0 z-50 backdrop-blur-2xl bg-white/70 border-b border-neutral-200/60 shadow-sm shadow-neutral-200/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center shadow-md shadow-[#2BB33A]/30">
-              <IconBolt className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-lg font-bold tracking-tight text-neutral-900">
-              PV Anmeldung 24
-            </span>
-          </a>
-
-          <a
-            href="/#leistungen"
-            className="text-sm font-medium text-neutral-600 hover:text-[#2BB33A] transition-colors"
-          >
-            Zurück zur Startseite
-          </a>
-        </div>
-      </header>
+      <Header />
 
       {/* ── Page content ── */}
       <main className="relative max-w-2xl mx-auto px-4 sm:px-6 py-16">
@@ -227,7 +202,7 @@ function ContactForm() {
                   />
                   <label htmlFor="privacy" className="text-sm text-neutral-500 leading-snug">
                     Ich habe die{" "}
-                    <a href="#" className="text-[#2BB33A] hover:underline">
+                    <a href="/datenschutz" className="text-[#2BB33A] hover:underline">
                       Datenschutzerklärung
                     </a>{" "}
                     gelesen und stimme der Verarbeitung meiner Daten zu.{" "}
@@ -269,17 +244,7 @@ function ContactForm() {
         )}
       </main>
 
-      {/* ── Footer ── */}
-      <footer className="relative border-t border-white/40 backdrop-blur-sm bg-white/30 py-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
-          <span>© {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.</span>
-          <div className="flex gap-6">
-            <a href="/impressum" className="hover:text-neutral-600 transition-colors">Impressum</a>
-            <a href="/datenschutz" className="hover:text-neutral-600 transition-colors">Datenschutz</a>
-            <a href="/agb" className="hover:text-neutral-600 transition-colors">AGB</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
