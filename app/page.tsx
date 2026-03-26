@@ -441,22 +441,21 @@ export default function Home() {
                   Professionelle Netzanmeldung
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-                  Netzanmeldung{" "}
+                  Anmeldung beim Netzbetreiber –{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2BB33A] to-[#6ddc79]">
-                    leicht gemacht
-                  </span>
+                    PV Anlage, Wärmepumpe & Wallbox
+                  </span>{" "}
+                  deutschlandweit anmelden
                 </h1>
                 <p className="text-xl text-neutral-300 mb-10 leading-relaxed">
-                  Wir übernehmen die komplette Netzanmeldung für Sie – von der
-                  Vorprüfung bis zur finalen Genehmigung. Persönlich, zuverlässig,
-                  ohne Aufwand für Sie.
+                  Professionelle <strong className="text-white">Anmeldung beim Netzbetreiber</strong> für PV Anlage, Wärmepumpe & Wallbox – inklusive §14a EnWG und Marktstammdatenregister. Bundesweit, schnell und ohne Aufwand für Sie.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="/contact"
                     className="inline-flex items-center justify-center rounded-xl bg-white hover:bg-neutral-50 text-neutral-900 font-semibold px-8 py-3 text-base shadow-lg shadow-black/20 transition-all hover:shadow-xl hover:shadow-black/30"
                   >
-                    Kontakt aufnehmen
+                    Jetzt anmelden
                   </a>
                   <a
                     href="tel:+4945418856891"
@@ -493,6 +492,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Problem ── */}
+        <section className="py-20 relative overflow-hidden bg-neutral-50/80">
+          <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-8">
+            <div className="text-center mb-10">
+              <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
+                Wichtig zu wissen
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                Ist die Anmeldung Ihrer Anlage beim Netzbetreiber Pflicht?
+              </h2>
+            </div>
+            <div className="backdrop-blur-xl bg-white/80 border border-white/60 rounded-3xl shadow-xl p-8 sm:p-10">
+              <p className="text-neutral-700 mb-6 text-lg">Viele Betreiber stellen sich die gleichen Fragen:</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  { text: "Ist meine Wärmepumpe meldepflichtig?", bold: "Wärmepumpe meldepflichtig?" },
+                  { text: "Muss ich meine Wallbox beim Netzbetreiber anmelden?", bold: "Wallbox beim Netzbetreiber anmelden?" },
+                  { text: "Ist die PV Anlage in Deutschland anzumelden?", bold: "PV Anlage in Deutschland anzumelden?" },
+                ].map((q) => (
+                  <li key={q.text} className="flex items-start gap-3">
+                    <span className="mt-1 w-5 h-5 rounded-full bg-neutral-100 border border-neutral-300 flex items-center justify-center shrink-0 text-neutral-500 text-xs font-bold">?</span>
+                    <span className="text-neutral-700 font-medium">{q.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-neutral-100 pt-6 space-y-4">
+                <p className="text-neutral-900 font-semibold text-lg">
+                  Die Antwort: In den meisten Fällen besteht eine gesetzliche Pflicht zur Anmeldung beim Netzbetreiber und im Marktstammdatenregister.
+                </p>
+                <p className="text-neutral-600">
+                  Ohne korrekte Anmeldung kann es zu Verzögerungen, Problemen mit dem Netzanschluss oder rechtlichen Konsequenzen kommen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── Features / Services ── */}
         <section id="leistungen" className="py-24 relative overflow-hidden">
           {/* Background blobs for glass effect */}
@@ -508,12 +544,25 @@ export default function Home() {
                 Unsere Leistungen
               </Badge>
               <h2 className="text-4xl font-bold text-neutral-900 mb-4">
-                Alles aus einer Hand
+                Wir übernehmen die komplette Netzbetreiber Anmeldung für Sie
               </h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Von der PV-Anlage über die Wärmepumpe bis zur Wallbox – wir
-                kümmern uns um jede Art der Netzanmeldung.
+                Als deutschlandweiter Spezialist übernehmen wir die vollständige Anmeldung Ihrer Anlage beim Netzbetreiber – unabhängig vom Standort.
               </p>
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-6">
+                {[
+                  "Anmeldung beim zuständigen Netzbetreiber",
+                  "Registrierung im Marktstammdatenregister",
+                  "Umsetzung der Vorgaben nach §14a EnWG",
+                  "Anmeldung von Stromzählern und Hausanschlüssen",
+                  "Kommunikation mit Energieversorgern und Behörden",
+                ].map((item) => (
+                  <span key={item} className="flex items-center gap-2 text-sm text-neutral-600">
+                    <IconCheckCircle className="w-4 h-4 text-[#2BB33A] shrink-0" />
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -565,6 +614,178 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── PV Anlage ── */}
+        <section id="pv-anlage" className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-10 right-20 w-72 h-72 bg-[#2BB33A]/8 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-neutral-200/30 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">Solar</Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                  PV Anlage beim Netzbetreiber anmelden
+                </h2>
+                <p className="text-neutral-600 mb-4 text-lg">
+                  Jede <strong className="text-neutral-900">PV Anlage (Solaranlage)</strong> muss beim Netzbetreiber angemeldet werden.
+                </p>
+                <p className="text-neutral-600 mb-4">
+                  Wir übernehmen die komplette <strong className="text-neutral-900">PV Anmeldung beim Netzbetreiber</strong>, inklusive aller erforderlichen Unterlagen und Abstimmungen.
+                </p>
+                <p className="text-neutral-600 mb-8">
+                  Auch die Eintragung im <strong className="text-neutral-900">Marktstammdatenregister</strong> wird von uns vollständig durchgeführt.
+                </p>
+                <a
+                  href="/contact?service=pv"
+                  className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
+                >
+                  PV Anlage jetzt anmelden
+                </a>
+              </div>
+              <div className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-xl shadow-neutral-200/40 p-8">
+                <h3 className="font-bold text-neutral-900 mb-5">Was wir für Ihre PV-Anlage übernehmen:</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Anmeldung beim zuständigen Netzbetreiber",
+                    "Registrierung im Marktstammdatenregister",
+                    "Umsetzung der Vorgaben nach §14a EnWG",
+                    "Vollständige Dokumentation & Kommunikation",
+                    "Persönliche Begleitung bis zum Abschluss",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <IconCheckCircle className="w-5 h-5 text-[#2BB33A] mt-0.5 shrink-0" />
+                      <span className="text-neutral-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Wärmepumpe ── */}
+        <section id="waermepumpe" className="py-20 relative overflow-hidden bg-neutral-50/80">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute bottom-10 left-20 w-72 h-72 bg-[#2BB33A]/6 rounded-full blur-3xl" />
+            <div className="absolute top-10 right-10 w-64 h-64 bg-neutral-300/30 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1 backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-xl shadow-neutral-200/40 p-8">
+                <h3 className="font-bold text-neutral-900 mb-5">Was wir für Ihre Wärmepumpe übernehmen:</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Formularvervollständigung beim Netzbetreiber",
+                    "Anmeldung nach §14a EnWG (steuerbare Verbrauchseinrichtung)",
+                    "Dokumentation Zählermontage/-demontage",
+                    "Kommunikation mit Energieversorgern und Behörden",
+                    "Gesetzeskonforme Abwicklung deutschlandweit",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <IconCheckCircle className="w-5 h-5 text-[#2BB33A] mt-0.5 shrink-0" />
+                      <span className="text-neutral-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="order-1 lg:order-2">
+                <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">Heizung</Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                  Wärmepumpe anmelden beim Netzbetreiber
+                </h2>
+                <p className="text-neutral-600 mb-4 text-lg">
+                  Wenn Sie eine Wärmepumpe installieren, ist in vielen Fällen eine <strong className="text-neutral-900">Anmeldung beim Netzbetreiber verpflichtend</strong>.
+                </p>
+                <p className="text-neutral-600 mb-8">
+                  Wir sorgen dafür, dass Ihre <strong className="text-neutral-900">Wärmepumpe korrekt angemeldet</strong> wird und alle gesetzlichen Vorgaben erfüllt sind.
+                </p>
+                <a
+                  href="/contact?service=wp"
+                  className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
+                >
+                  Wärmepumpe jetzt anmelden
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Wallbox + §14a ── */}
+        <section id="wallbox" className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-10 right-20 w-72 h-72 bg-[#2BB33A]/8 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-10 w-64 h-64 bg-neutral-200/30 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">E-Mobilität</Badge>
+                <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+                  Wallbox anmelden nach §14a EnWG
+                </h2>
+                <p className="text-neutral-600 mb-4 text-lg">
+                  Durch die neue Regelung nach §14a EnWG müssen viele <strong className="text-neutral-900">Wallboxen als steuerbare Verbrauchseinrichtung angemeldet werden</strong>.
+                </p>
+                <p className="text-neutral-600 mb-8">
+                  Wir übernehmen die vollständige <strong className="text-neutral-900">Wallbox Anmeldung beim Netzbetreiber</strong> und stellen sicher, dass alle Anforderungen erfüllt sind.
+                </p>
+                <a
+                  href="/contact?service=wallbox"
+                  className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-semibold px-8 py-3 text-base shadow-md transition-all"
+                >
+                  Wallbox jetzt anmelden
+                </a>
+              </div>
+              <div className="backdrop-blur-2xl bg-white/65 border border-white/60 rounded-3xl shadow-xl shadow-neutral-200/40 p-8">
+                <h3 className="font-bold text-neutral-900 mb-5">§14a EnWG – das müssen Sie wissen:</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Anmeldung als steuerbare Verbrauchseinrichtung (SteuVE)",
+                    "Vollständige Kommunikation mit dem Netzbetreiber",
+                    "Gesetzeskonforme Umsetzung aller Anforderungen",
+                    "Dokumentation & Nachweis für den Netzbetreiber",
+                    "Persönliche Begleitung bis zum Abschluss",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <IconCheckCircle className="w-5 h-5 text-[#2BB33A] mt-0.5 shrink-0" />
+                      <span className="text-neutral-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── §14a USP ── */}
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#2BB33A]/6 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-neutral-200/40 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
+            <Badge className="mb-6 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
+              Gesetzliche Anforderungen
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+              §14a EnWG – gesetzeskonforme Anmeldung Ihrer Anlage
+            </h2>
+            <p className="text-neutral-500 text-lg mb-4">
+              Die Anforderungen nach §14a EnWG sind komplex und unterscheiden sich je nach Netzbetreiber.
+            </p>
+            <p className="text-neutral-600 text-lg mb-10">
+              Wir übernehmen die komplette Umsetzung und sorgen dafür, dass Ihre Anlage korrekt und gesetzeskonform angemeldet wird.
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-bold px-10 py-4 text-base shadow-xl transition-all"
+            >
+              Jetzt §14a-konforme Anmeldung starten
+            </a>
           </div>
         </section>
 
@@ -650,6 +871,28 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── Deutschlandweit ── */}
+        <section className="py-20 relative overflow-hidden bg-neutral-50/80">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-10 left-16 w-80 h-80 bg-neutral-200/40 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 right-16 w-72 h-72 bg-[#2BB33A]/6 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-4xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
+            <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
+              Bundesweit verfügbar
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+              Anmeldung beim Netzbetreiber deutschlandweit
+            </h2>
+            <p className="text-neutral-600 text-lg mb-4">
+              Wir bieten unseren Service <strong className="text-neutral-900">bundesweit in ganz Deutschland</strong> an.
+            </p>
+            <p className="text-neutral-600 text-lg">
+              Egal ob Bayern, NRW, Niedersachsen oder Schleswig-Holstein – wir übernehmen die Anmeldung bei Ihrem zuständigen Netzbetreiber vollständig digital.
+            </p>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section className="py-24 relative overflow-hidden bg-neutral-200">
           <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
@@ -657,17 +900,16 @@ export default function Home() {
               Jetzt starten
             </Badge>
             <h2 className="text-4xl font-extrabold text-neutral-900 mb-4">
-              Bereit loszulegen?
+              Jetzt Anlage beim Netzbetreiber anmelden lassen
             </h2>
             <p className="text-neutral-500 text-lg mb-10 leading-relaxed">
-              Nehmen Sie noch heute Kontakt auf – unser Team meldet sich innerhalb
-              von 24 Stunden bei Ihnen und bespricht alle Details persönlich mit Ihnen.
+              Lassen Sie Ihre <strong className="text-neutral-900">PV Anlage, Wärmepumpe oder Wallbox professionell anmelden</strong> – schnell, sicher und ohne Aufwand. Starten Sie jetzt Ihre Anfrage und wir übernehmen die komplette Netzbetreiber Anmeldung für Sie.
             </p>
             <a
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl bg-neutral-900 hover:bg-neutral-700 text-white font-bold px-10 py-4 text-base shadow-xl shadow-black/20 transition-all hover:shadow-2xl hover:shadow-black/30"
             >
-              Kontakt aufnehmen
+              Jetzt Anmeldung starten
             </a>
           </div>
         </section>
