@@ -1,24 +1,13 @@
 import { Separator } from "@/components/ui/separator";
 
-function IconBolt({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  );
-}
-
 export default function Footer() {
   return (
     <footer className="bg-neutral-950 text-neutral-400 py-16">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center">
-                <IconBolt className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-base font-bold text-white">Netzbetreiber 24</span>
+            <div className="flex items-center mb-4">
+              <img src="/nb1.svg" alt="Netzbetreiber 24" className="h-7 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed text-neutral-500">
               Ihr professioneller Partner für alle Arten der Netzanmeldung in Deutschland.
