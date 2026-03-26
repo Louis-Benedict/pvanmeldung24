@@ -58,19 +58,19 @@ function ContactForm() {
   }
 
   return (
-    <div className="min-h-screen text-neutral-900">
-      {/* Background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 pointer-events-none" />
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-neutral-300/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-neutral-200/40 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#2BB33A]/6 rounded-full blur-3xl" />
-      </div>
+    <div className="text-neutral-900">
+      <div className="relative min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100/40 to-neutral-50 overflow-hidden">
+        {/* Background blobs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-neutral-300/30 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-neutral-200/40 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-[#2BB33A]/6 rounded-full blur-3xl" />
+        </div>
 
-      <Header />
+        <Header />
 
-      {/* ── Page content ── */}
-      <main className="relative max-w-2xl mx-auto px-4 sm:px-6 py-16">
+        {/* ── Page content ── */}
+        <main className="relative max-w-2xl mx-auto px-4 sm:px-6 py-16">
         {!submitted ? (
           <>
             <div className="mb-10 text-center">
@@ -242,7 +242,8 @@ function ContactForm() {
             </a>
           </div>
         )}
-      </main>
+        </main>
+      </div>
 
       <Footer />
     </div>
