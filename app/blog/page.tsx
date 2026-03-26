@@ -116,7 +116,7 @@ export default function BlogPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-20 bg-neutral-100">
+        <section className="py-20 bg-neutral-200">
           <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
             <h2 className="text-3xl font-extrabold text-neutral-900 mb-4">
               Bereit zur Anmeldung?

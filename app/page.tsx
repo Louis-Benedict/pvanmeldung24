@@ -651,7 +651,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-24 relative overflow-hidden bg-neutral-100">
+        <section className="py-24 relative overflow-hidden bg-neutral-200">
           <div className="relative max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center">
             <Badge className="mb-6 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30">
               Jetzt starten
