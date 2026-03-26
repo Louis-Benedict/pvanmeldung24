@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "waermepumpe-anmelden",
     title: "Wärmepumpe anmelden – ist das Pflicht?",
-    metaTitle: "Wärmepumpe anmelden – Pflicht & Anleitung 2025 | PV Anmeldung 24",
+    metaTitle: "Wärmepumpe anmelden – Pflicht & Anleitung 2025 | Netzbetreiber 24",
     metaDescription:
       "Muss eine Wärmepumpe angemeldet werden? Ja – wir erklären die Pflichten nach §14a EnWG, die Eintragung im Marktstammdatenregister und alle notwendigen Schritte.",
     publishedAt: "2025-03-10",
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "pv-anlage-anmelden",
     title: "PV-Anlage anmelden – Schritt für Schritt erklärt",
-    metaTitle: "PV-Anlage anmelden 2025 – Schritt für Schritt | PV Anmeldung 24",
+    metaTitle: "PV-Anlage anmelden 2025 – Schritt für Schritt | Netzbetreiber 24",
     metaDescription:
       "Alles zur Anmeldung einer Photovoltaikanlage: Voranmeldung beim Netzbetreiber, Marktstammdatenregister, Zähler und häufige Fehler – verständlich erklärt.",
     publishedAt: "2025-02-28",
@@ -181,7 +181,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "wallbox-anmelden-14a-enwg",
     title: "Wallbox anmelden – Pflicht nach §14a EnWG?",
-    metaTitle: "Wallbox anmelden 2025 – Pflicht nach §14a EnWG | PV Anmeldung 24",
+    metaTitle: "Wallbox anmelden 2025 – Pflicht nach §14a EnWG | Netzbetreiber 24",
     metaDescription:
       "Seit 2024 gilt §14a EnWG auch für Wallboxen. Wir erklären, wer anmelden muss, was der Netzbetreiber verlangt und welche finanziellen Vorteile die Registrierung bringt.",
     publishedAt: "2025-02-15",
@@ -266,7 +266,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "anlage-nicht-angemeldet-folgen",
     title: "Was passiert, wenn ich meine Anlage nicht anmelde?",
-    metaTitle: "Energieanlage nicht angemeldet – alle Folgen und Risiken | PV Anmeldung 24",
+    metaTitle: "Energieanlage nicht angemeldet – alle Folgen und Risiken | Netzbetreiber 24",
     metaDescription:
       "Was passiert, wenn PV-Anlage, Wärmepumpe oder Wallbox nicht angemeldet sind? Wir erklären alle rechtlichen, finanziellen und technischen Konsequenzen – und wie Sie sie vermeiden.",
     publishedAt: "2025-01-20",

@@ -15,7 +15,7 @@ export default function Header() {
             <IconBolt className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
           </div>
           <span className="text-sm sm:text-lg font-bold tracking-tight text-neutral-900">
-            PV Anmeldung 24
+            Netzbetreiber 24
           </span>
         </a>
 

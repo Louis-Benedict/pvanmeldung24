@@ -23,15 +23,15 @@ export async function generateMetadata({
     title: post.metaTitle,
     description: post.metaDescription,
     alternates: {
-      canonical: `https://pv-anmeldung24.com/blog/${post.slug}`,
+      canonical: `https://netzbetreiber24.de/blog/${post.slug}`,
     },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishedAt,
-      url: `https://pv-anmeldung24.com/blog/${post.slug}`,
-      siteName: "PV Anmeldung 24",
+      url: `https://netzbetreiber24.de/blog/${post.slug}`,
+      siteName: "Netzbetreiber 24",
     },
   };
 }
@@ -137,18 +137,18 @@ export default async function BlogPostPage({
     datePublished: post.publishedAt,
     author: {
       "@type": "Organization",
-      name: "PV Anmeldung 24",
-      url: "https://pv-anmeldung24.com",
+      name: "Netzbetreiber 24",
+      url: "https://netzbetreiber24.de",
     },
     publisher: {
       "@type": "Organization",
-      name: "PV Anmeldung 24",
-      url: "https://pv-anmeldung24.com",
+      name: "Netzbetreiber 24",
+      url: "https://netzbetreiber24.de",
     },
-    url: `https://pv-anmeldung24.com/blog/${post.slug}`,
+    url: `https://netzbetreiber24.de/blog/${post.slug}`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://pv-anmeldung24.com/blog/${post.slug}`,
+      "@id": `https://netzbetreiber24.de/blog/${post.slug}`,
     },
   };
 

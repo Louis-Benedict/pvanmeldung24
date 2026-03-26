@@ -36,8 +36,8 @@ export default function DatenschutzPage() {
                 <p className="font-semibold text-slate-900">Kontakt:</p>
                 <p>
                   E-Mail:{" "}
-                  <a href="mailto:info@pv-anmeldung24.com" className="text-indigo-600 hover:underline">
-                    info@pv-anmeldung24.com
+                  <a href="mailto:info@netzbetreiber24.de" className="text-indigo-600 hover:underline">
+                    info@netzbetreiber24.de
                   </a>
                 </p>
                 <p>

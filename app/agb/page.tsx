@@ -154,8 +154,8 @@ export default function AGBPage() {
               <p className="mt-2">Vertreten durch den Geschäftsführer: Ahmad Awat Ahmad</p>
               <p className="mt-2">
                 E-Mail:{" "}
-                <a href="mailto:info@pv-anmeldung24.com" className="text-indigo-600 hover:underline">
-                  info@pv-anmeldung24.com
+                <a href="mailto:info@netzbetreiber24.de" className="text-indigo-600 hover:underline">
+                  info@netzbetreiber24.de
                 </a>
               </p>
               <p>

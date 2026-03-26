@@ -625,7 +625,7 @@ export default function Home() {
               <Badge className="mb-4 bg-[#2BB33A]/10 text-[#1e7a27] border-[#2BB33A]/30 backdrop-blur-sm">
                 Ihre Vorteile
               </Badge>
-              <h2 className="text-4xl font-bold text-neutral-900 mb-4">Warum PV Anmeldung 24?</h2>
+              <h2 className="text-4xl font-bold text-neutral-900 mb-4">Warum Netzbetreiber 24?</h2>
               <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                 Mehr Zeit für Ihr Kerngeschäft – weniger Aufwand für Bürokratie.
               </p>

@@ -5,11 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Ratgeber & Blog – Netzanmeldung für PV, Wärmepumpe & Wallbox | PV Anmeldung 24",
+  title: "Ratgeber & Blog – Netzanmeldung für PV, Wärmepumpe & Wallbox | Netzbetreiber 24",
   description:
     "Nützliche Artikel rund um die Anmeldung von PV-Anlagen, Wärmepumpen und Wallboxen. Alles über §14a EnWG, das Marktstammdatenregister und die Netzanmeldung.",
   openGraph: {
-    title: "Ratgeber & Blog – PV Anmeldung 24",
+    title: "Ratgeber & Blog – Netzbetreiber 24",
     description:
       "Nützliche Artikel rund um die Anmeldung von PV-Anlagen, Wärmepumpen und Wallboxen.",
     type: "website",

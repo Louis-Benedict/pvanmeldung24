@@ -3,7 +3,7 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PV Anmeldung 24 – Netzanmeldung leicht gemacht",
+  title: "Netzbetreiber 24 – Netzanmeldung leicht gemacht",
   description:
     "Ihr professioneller Partner für alle Arten der Netzanmeldung – PV, Wärmepumpe & Wallbox. Persönlich, zuverlässig, ohne Aufwand für Sie.",
 };

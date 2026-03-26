@@ -30,7 +30,7 @@ export default function ImpressumPage() {
 
             <div>
               <p className="font-semibold text-slate-900 mb-1">Kontakt:</p>
-              <p>E-Mail: <a href="mailto:info@pv-anmeldung24.com" className="text-indigo-600 hover:underline">info@pv-anmeldung24.com</a></p>
+              <p>E-Mail: <a href="mailto:info@netzbetreiber24.de" className="text-indigo-600 hover:underline">info@netzbetreiber24.de</a></p>
               <p>Telefonnummer: <a href="tel:+45418856891" className="text-indigo-600 hover:underline">+49 4541 8856891</a></p>
             </div>
 

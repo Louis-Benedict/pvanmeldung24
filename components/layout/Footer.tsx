@@ -18,7 +18,7 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-[#2BB33A] flex items-center justify-center">
                 <IconBolt className="w-4 h-4 text-white" />
               </div>
-              <span className="text-base font-bold text-white">PV Anmeldung 24</span>
+              <span className="text-base font-bold text-white">Netzbetreiber 24</span>
             </div>
             <p className="text-sm leading-relaxed text-neutral-500">
               Ihr professioneller Partner für alle Arten der Netzanmeldung in Deutschland.
@@ -76,7 +76,7 @@ export default function Footer() {
         <Separator className="bg-neutral-800 mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-neutral-600">
-          <p>&copy; {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} Netzbetreiber 24. Alle Rechte vorbehalten.</p>
           <p>Made with &#9825; in Deutschland</p>
         </div>
       </div>
