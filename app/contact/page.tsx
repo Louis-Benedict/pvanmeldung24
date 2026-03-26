@@ -275,8 +275,8 @@ function ContactForm() {
           <span>© {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.</span>
           <div className="flex gap-6">
             <a href="/impressum" className="hover:text-neutral-600 transition-colors">Impressum</a>
-            <a href="#" className="hover:text-neutral-600 transition-colors">Datenschutz</a>
-            <a href="#" className="hover:text-neutral-600 transition-colors">AGB</a>
+            <a href="/datenschutz" className="hover:text-neutral-600 transition-colors">Datenschutz</a>
+            <a href="/agb" className="hover:text-neutral-600 transition-colors">AGB</a>
           </div>
         </div>
       </footer>

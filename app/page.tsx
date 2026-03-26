@@ -755,9 +755,9 @@ export default function Home() {
               <h4 className="text-sm font-semibold text-white mb-4">Rechtliches</h4>
               <ul className="space-y-2.5 text-sm">
                 {[
-                  { label: "Datenschutz", href: "#" },
+                  { label: "Datenschutz", href: "/datenschutz" },
                   { label: "Impressum", href: "/impressum" },
-                  { label: "AGB", href: "#" },
+                  { label: "AGB", href: "/agb" },
                 ].map((item) => (
                   <li key={item.label}>
                     <a href={item.href} className="hover:text-[#2BB33A] transition-colors">

@@ -82,8 +82,8 @@ export default function ImpressumPage() {
           <span>© {new Date().getFullYear()} PV Anmeldung 24. Alle Rechte vorbehalten.</span>
           <div className="flex gap-6 text-slate-400">
             <a href="/impressum" className="hover:text-indigo-400 transition-colors">Impressum</a>
-            <a href="#" className="hover:text-indigo-400 transition-colors">Datenschutz</a>
-            <a href="#" className="hover:text-indigo-400 transition-colors">AGB</a>
+            <a href="/datenschutz" className="hover:text-indigo-400 transition-colors">Datenschutz</a>
+            <a href="/agb" className="hover:text-indigo-400 transition-colors">AGB</a>
           </div>
         </div>
       </footer>
